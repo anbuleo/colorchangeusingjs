@@ -49,7 +49,10 @@ let rectDiv = document.createElement("div")
 let cirDiv = document.createElement("div")
 
 let btnDiv = document.createElement('div')
+let ResetDiv = document.createElement('div')
+let btnReset = document.createElement('button')
 
+btnReset.innerText = 'Reset'
 
 
 let btn1 = document.createElement('button')
@@ -70,6 +73,7 @@ for(let i in btnStyle){
     btn1.style[i] = btnStyle[i]
     btn2.style[i] = btnStyle[i]
     btn3.style[i] = btnStyle[i]
+    btnReset.style[i]= btnStyle[i]
 }
 
 
@@ -94,8 +98,10 @@ btn.forEach((e)=>{
 btn1.addEventListener("click",()=>changeColor('Green'))
 btn2.addEventListener("click",()=>changeColor('Red'))
 btn3.addEventListener("click",()=>changeColor('Blue'))
+btnReset.addEventListener("click",()=>changeColor('white'))
 
-let color = ['Green', 'Red', 'blue']
+
+let color = ['Green', 'Red', 'blue',]
 
 
 let changeColor = (color)=>{
@@ -143,11 +149,14 @@ rectDiv.appendChild(cirDiv)
 
 //map to append more child in one div
 arrBtn.map(e=>btnDiv.appendChild(e))
+ResetDiv.appendChild(btnReset)
 
 divContainer.appendChild(divContainerH1)
 divContainer.appendChild(inputDiv)
 divContainer.appendChild(rectDiv)
 divContainer.appendChild(btnDiv)
+
+divContainer.appendChild(ResetDiv)
 
 
 
